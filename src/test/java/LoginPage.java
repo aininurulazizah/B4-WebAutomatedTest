@@ -13,6 +13,8 @@ public class LoginPage {
     private By usernameField = By.id("user-name");
     private By passwordField = By.id("password");
     private By loginButton = By.id("login-button");
+    private By menuButton = By.id("react-burger-menu-btn");
+    private By logoutLink = By.id("logout_sidebar_link");
 
     // Methods to interact with the elements
     public void enterUsername(String username) {
@@ -30,9 +32,21 @@ public class LoginPage {
         loginButtonElement.click();
     }
 
+    public void clickMenuButton() {
+        WebElement menuButtonElement = driver.findElement(menuButton);
+        menuButtonElement.click();
+    }
+
+    public void clickLogoutLink() {
+        WebElement logoutLinkElement = driver.findElement(logoutLink);
+        logoutLinkElement.click();
+    }
+
     public String isOnDashboardPage() {
         return driver.getCurrentUrl();
     }
+
+    public String isOnLoginPage() { return driver.getCurrentUrl(); }
 
     public String errorMessageUsernamePasswordInvalid() {
         WebElement errorMessageElement = driver.findElement(By.cssSelector(".error-message-container h3[data-test='error']"));

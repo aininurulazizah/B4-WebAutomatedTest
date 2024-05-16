@@ -40,4 +40,23 @@ public class LoginSteps {
     public void user_mendapat_pesan(String expectedErrorMessage) {
         Assert.assertEquals(expectedErrorMessage, loginPage.errorMessageUsernamePasswordInvalid());
     }
+
+    //Logout
+
+    @When("User mengklik icon menu di halaman dashboard")
+    public void user_clicks_on_the_menu_icon() {
+        loginPage.clickMenuButton();
+    }
+
+    @When("User memilih opsi {string}")
+    public void user_selects_option(String option) {
+        if ("Logout".equals(option)) {
+            loginPage.clickLogoutLink();
+        }
+    }
+
+    @Then("User dinavigasikan ke halaman login page")
+    public void user_is_redirected_to_the_login_page() {
+        Assert.assertEquals("https://www.saucedemo.com/", loginPage.isOnLoginPage());
+    }
 }
