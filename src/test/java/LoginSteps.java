@@ -1,3 +1,4 @@
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -17,7 +18,6 @@ public class LoginSteps {
         loginPage = new LoginPage(driver);
     }
 
-//    baru
     @When("User memasukkan {string} & {string}")
     public void user_enters_username_and_password(String username, String password) {
         loginPage.enterUsername(username);
@@ -58,5 +58,12 @@ public class LoginSteps {
     @Then("User dinavigasikan ke halaman login page")
     public void user_is_redirected_to_the_login_page() {
         Assert.assertEquals("https://www.saucedemo.com/", loginPage.isOnLoginPage());
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
