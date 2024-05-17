@@ -3,6 +3,6 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java")
+@CucumberOptions(plugin = {"html:target/test-report.html"}, features = "src/test/resources/features")
 public class CucumberTestRunner {
 }
