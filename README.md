@@ -23,8 +23,8 @@ Untuk menjalankan proyek pengujian ini, diperlukan beberapa equipment sebagai pe
 ```
 git clone https://github.com/aininurulazizah/B4-WebAutomatedTest.git
 ```
-3. Buka proyek menggunakan IDE pemrograman. Kami menyarankan menggunakan IntelliJ
-4. Proses instalasi JavaBuild akan dilakukan secara otomatis ketika proyek dibuka dan tunggu hingga proses instalasi selesai.
+2. Buka proyek menggunakan IDE pemrograman. Kami menyarankan menggunakan IntelliJ
+3. Proses instalasi JavaBuild akan dilakukan secara otomatis ketika proyek dibuka dan tunggu hingga proses instalasi selesai.
 
 ### Konfigurasi ### 
 Proses konfigurasi project menggunakan build automation pada file pom.xml. Semua dependency yang dibutuhkan ditambahkan di dalam dependencies, seperti: 
