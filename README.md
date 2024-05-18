@@ -18,6 +18,12 @@ Untuk menjalankan proyek pengujian ini, diperlukan beberapa equipment sebagai pe
 - Web Browser : Microsoft Edge Version 124.0.2478.97
 - IDE : Intellij IDEA
 
+### Installation ###
+1. Clone repository dengan menjalankan perintah
+`git clone https://github.com/aininurulazizah/B4-WebAutomatedTest.git `
+2. Buka proyek menggunakan IDE pemrograman. Kami menyarankan menggunakan IntelliJ
+3. Proses instalasi JavaBuild akan dilakukan secara otomatis ketika proyek dibuka dan tunggu hingga proses instalasi selesai.
+
 ### Konfigurasi ### 
 Proses konfigurasi project menggunakan build automation pada file pom.xml. Semua dependency yang dibutuhkan ditambahkan di dalam dependencies, seperti: 
 1. Dependency untuk menulis step definitions dalam bahasa Java 
@@ -57,6 +63,26 @@ Proses konfigurasi project menggunakan build automation pada file pom.xml. Semua
           <version>4.20.0</version>
     </dependency>
     ```
+
+### Struktur Proyek ###
+Tujuan proyek ini adalah untuk melakukan pengujian web otomatis pada website Swag Labs. Kode program untuk melakukan pengujian tersimpan dalam direktori `test`. Berikut adalah struktur proyek secara keseluruhan.
+```
+├── edgedriver_win64
+└── src
+    └── test
+        ├── java
+        │   ├── CucumberTestRunner.java
+        │   ├── LoginPage.java
+        │   └── LoginSteps.java
+        └── resources
+            └── features
+                ├── login.feature
+                └── logout.feature
+```
+- Folder `edgedriver_win64` berisi file WebDriver untuk menjalankan tes Selenium
+- `LoginPage.java` berisi kumpulan metode untuk berinteraksi dengan elemen-elemen pada halaman web.
+- `LoginSteps.java` berisi kumpulan script untuk mengimplementasikan setiap langkah yang didefinisikan dalam skenario pengujian Gherkin.
+- `login.feature` dan `logout.feature` berisi skenario pengujian Login dan Logout dalam format Gherkin.
 
 ### How to Run ###
 Untuk melakukan eksekusi pengujian web otomatis ini, terdapat dua cara yang dapat dilakukan yaitu menggunakan terminal dan Class Test Runner. 
